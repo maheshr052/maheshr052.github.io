@@ -1,0 +1,2219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240619 21:01:58.698" rpa="false" schemaversion="4">
+<suite id="s1" name="Screen" source="D:\Automation\testangel-main\pysmartapi\screen.robot">
+<kw name="Open Browser Test" type="SETUP">
+<arg>${HOMEPAGE}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240619 21:01:59.011" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/finance/quote'.</msg>
+<status status="PASS" starttime="20240619 21:01:59.011" endtime="20240619 21:02:01.017"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240619 21:02:01.017" endtime="20240619 21:02:01.057"/>
+</kw>
+<status status="PASS" starttime="20240619 21:01:59.011" endtime="20240619 21:02:01.058"/>
+</kw>
+<test id="s1-t1" name="Stock Screens" line="18">
+<kw name="Log Variables" library="BuiltIn">
+<doc>Logs all variables in the current scope with given log level.</doc>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${/} = \</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${:} = ;</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${\n} = 
+</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${BROWSER} = chrome</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${DEBUG_FILE} = NONE</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${EXECDIR} = D:\Automation\testangel-main</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${False} = False</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${HOMEPAGE} = https://www.google.com/finance/quote</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${LOG_FILE} = D:\Automation\testangel-main\maheshr052.github.io\20241906\log.html</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${LOG_LEVEL} = INFO</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${None} = None</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${null} = None</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">&amp;{OPTIONS} = { include=[] | exclude=[] | skip=[] | skip_on_failure=[] }</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${OUTPUT_DIR} = D:\Automation\testangel-main\maheshr052.github.io\20241906</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${OUTPUT_FILE} = D:\Automation\testangel-main\maheshr052.github.io\20241906\output.xml</msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${PREV_TEST_MESSAGE} = </msg>
+<msg timestamp="20240619 21:02:01.062" level="INFO">${PREV_TEST_NAME} = </msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${PREV_TEST_STATUS} = </msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${REPORT_FILE} = D:\Automation\testangel-main\maheshr052.github.io\20241906\report.html</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${SPACE} =  </msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${SUITE_DOCUMENTATION} = </msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">&amp;{SUITE_METADATA} = { }</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${SUITE_NAME} = Screen</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${SUITE_SOURCE} = D:\Automation\testangel-main\pysmartapi\screen.robot</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${TEMPDIR} = C:\Users\Dell\AppData\Local\Temp</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${TEST_DOCUMENTATION} = </msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${TEST_NAME} = Stock Screens</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">@{TEST_TAGS} = [ ]</msg>
+<msg timestamp="20240619 21:02:01.064" level="INFO">${True} = True</msg>
+<status status="PASS" starttime="20240619 21:02:01.062" endtime="20240619 21:02:01.064"/>
+</kw>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>psycopg2</arg>
+<arg>postgres</arg>
+<arg>postgres</arg>
+<arg>admin</arg>
+<arg>localhost</arg>
+<arg>5432</arg>
+<doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
+connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
+<msg timestamp="20240619 21:02:01.083" level="INFO">Connecting using : psycopg2.connect(database=postgres, user=postgres, password=***, host=localhost, port=5432)</msg>
+<status status="PASS" starttime="20240619 21:02:01.064" endtime="20240619 21:02:01.140"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>@{queryResults}</var>
+<arg>SELECT distinct * FROM chartink</arg>
+<doc>Runs a query with the ``selectStatement`` and returns the result as a list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<msg timestamp="20240619 21:02:01.141" level="INFO">Executing : Query  |  SELECT distinct * FROM chartink </msg>
+<msg timestamp="20240619 21:02:01.144" level="INFO">@{queryResults} = [ ('JUBLINGREA',) | ('COFORGE',) | ('ICICIBANK',) | ('CSBBANK',) | ('SHYAMMETL',) | ('LAXMIMACH',) | ('AAVAS',) | ('RBLBANK',) | ('COROMANDEL',) | ('DEEPAKNTR',) | ('HOMEFIRST',) | ('NAVINFLUOR',) | (...</msg>
+<status status="PASS" starttime="20240619 21:02:01.140" endtime="20240619 21:02:01.144"/>
+</kw>
+<for flavor="IN">
+<var>${text}</var>
+<value>@{queryResults}</value>
+<iter>
+<var name="${text}">('JUBLINGREA',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:01.146" level="INFO">('JUBLINGREA',)</msg>
+<status status="PASS" starttime="20240619 21:02:01.146" endtime="20240619 21:02:01.147"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:01.147" level="INFO">Opening url 'https://www.google.com/finance/quote/JUBLINGREA:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:01.147" endtime="20240619 21:02:02.746"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:03.746" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:02.746" endtime="20240619 21:02:03.746"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:03.746" endtime="20240619 21:02:03.821"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:03.746" endtime="20240619 21:02:03.822"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:04.007" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="JUBLINGREA_1D"&gt;&lt;img src="JUBLINGREA_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240619 21:02:04.007" level="INFO">C:\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py:829: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  return self.get_screenshot_as_file(filename)</msg>
+<status status="PASS" starttime="20240619 21:02:03.822" endtime="20240619 21:02:04.007"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:04.007" level="INFO">Opening url 'https://www.google.com/finance/quote/JUBLINGREA:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:04.007" endtime="20240619 21:02:05.107"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:05.112" endtime="20240619 21:02:05.158"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:05.107" endtime="20240619 21:02:05.158"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:06.159" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:05.158" endtime="20240619 21:02:06.159"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:06.341" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="JUBLINGREA_5D"&gt;&lt;img src="JUBLINGREA_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:06.159" endtime="20240619 21:02:06.341"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:01.146" endtime="20240619 21:02:06.341"/>
+</iter>
+<iter>
+<var name="${text}">('COFORGE',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:06.341" level="INFO">('COFORGE',)</msg>
+<status status="PASS" starttime="20240619 21:02:06.341" endtime="20240619 21:02:06.341"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:06.341" level="INFO">Opening url 'https://www.google.com/finance/quote/COFORGE:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:06.341" endtime="20240619 21:02:07.532"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:08.534" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:07.533" endtime="20240619 21:02:08.534"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:08.534" endtime="20240619 21:02:08.600"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:08.534" endtime="20240619 21:02:08.600"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:08.758" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="COFORGE_1D"&gt;&lt;img src="COFORGE_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:08.600" endtime="20240619 21:02:08.758"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:08.758" level="INFO">Opening url 'https://www.google.com/finance/quote/COFORGE:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:08.758" endtime="20240619 21:02:09.874"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:09.875" endtime="20240619 21:02:09.912"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:09.875" endtime="20240619 21:02:09.912"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:10.920" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:09.920" endtime="20240619 21:02:10.920"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:11.118" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="COFORGE_5D"&gt;&lt;img src="COFORGE_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:10.920" endtime="20240619 21:02:11.118"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:06.341" endtime="20240619 21:02:11.118"/>
+</iter>
+<iter>
+<var name="${text}">('ICICIBANK',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:11.118" level="INFO">('ICICIBANK',)</msg>
+<status status="PASS" starttime="20240619 21:02:11.118" endtime="20240619 21:02:11.118"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:11.118" level="INFO">Opening url 'https://www.google.com/finance/quote/ICICIBANK:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:11.118" endtime="20240619 21:02:12.215"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:13.216" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:12.215" endtime="20240619 21:02:13.216"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:13.216" endtime="20240619 21:02:13.266"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:13.216" endtime="20240619 21:02:13.268"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:13.439" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ICICIBANK_1D"&gt;&lt;img src="ICICIBANK_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:13.268" endtime="20240619 21:02:13.439"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:13.439" level="INFO">Opening url 'https://www.google.com/finance/quote/ICICIBANK:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:13.439" endtime="20240619 21:02:14.496"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:14.496" endtime="20240619 21:02:14.527"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:14.496" endtime="20240619 21:02:14.527"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:15.528" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:14.527" endtime="20240619 21:02:15.528"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:15.705" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ICICIBANK_5D"&gt;&lt;img src="ICICIBANK_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:15.528" endtime="20240619 21:02:15.705"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:11.118" endtime="20240619 21:02:15.705"/>
+</iter>
+<iter>
+<var name="${text}">('CSBBANK',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:15.705" level="INFO">('CSBBANK',)</msg>
+<status status="PASS" starttime="20240619 21:02:15.705" endtime="20240619 21:02:15.705"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:15.705" level="INFO">Opening url 'https://www.google.com/finance/quote/CSBBANK:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:15.705" endtime="20240619 21:02:16.790"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:17.790" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:16.790" endtime="20240619 21:02:17.790"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:17.790" endtime="20240619 21:02:17.841"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:17.790" endtime="20240619 21:02:17.841"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:18.036" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CSBBANK_1D"&gt;&lt;img src="CSBBANK_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:17.841" endtime="20240619 21:02:18.036"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:18.036" level="INFO">Opening url 'https://www.google.com/finance/quote/CSBBANK:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:18.036" endtime="20240619 21:02:19.021"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:19.026" endtime="20240619 21:02:19.063"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:19.021" endtime="20240619 21:02:19.063"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:20.063" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:19.063" endtime="20240619 21:02:20.063"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:20.241" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CSBBANK_5D"&gt;&lt;img src="CSBBANK_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:20.063" endtime="20240619 21:02:20.241"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:15.705" endtime="20240619 21:02:20.254"/>
+</iter>
+<iter>
+<var name="${text}">('SHYAMMETL',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:20.254" level="INFO">('SHYAMMETL',)</msg>
+<status status="PASS" starttime="20240619 21:02:20.254" endtime="20240619 21:02:20.254"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:20.254" level="INFO">Opening url 'https://www.google.com/finance/quote/SHYAMMETL:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:20.254" endtime="20240619 21:02:21.280"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:22.282" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:21.280" endtime="20240619 21:02:22.282"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:22.282" endtime="20240619 21:02:22.332"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:22.282" endtime="20240619 21:02:22.332"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:22.498" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SHYAMMETL_1D"&gt;&lt;img src="SHYAMMETL_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:22.332" endtime="20240619 21:02:22.498"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:22.498" level="INFO">Opening url 'https://www.google.com/finance/quote/SHYAMMETL:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:22.498" endtime="20240619 21:02:23.528"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240619 21:02:23.567" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240619 21:02:23.528" endtime="20240619 21:02:23.806"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:23.528" endtime="20240619 21:02:23.806"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:24.807" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:23.806" endtime="20240619 21:02:24.807"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:24.971" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SHYAMMETL_5D"&gt;&lt;img src="SHYAMMETL_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:24.807" endtime="20240619 21:02:24.971"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:20.254" endtime="20240619 21:02:24.971"/>
+</iter>
+<iter>
+<var name="${text}">('LAXMIMACH',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:24.987" level="INFO">('LAXMIMACH',)</msg>
+<status status="PASS" starttime="20240619 21:02:24.971" endtime="20240619 21:02:24.987"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:24.987" level="INFO">Opening url 'https://www.google.com/finance/quote/LAXMIMACH:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:24.987" endtime="20240619 21:02:26.097"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:27.097" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:26.097" endtime="20240619 21:02:27.097"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:27.097" endtime="20240619 21:02:27.127"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:27.097" endtime="20240619 21:02:27.127"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:27.298" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="LAXMIMACH_1D"&gt;&lt;img src="LAXMIMACH_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:27.127" endtime="20240619 21:02:27.298"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:27.298" level="INFO">Opening url 'https://www.google.com/finance/quote/LAXMIMACH:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:27.298" endtime="20240619 21:02:28.312"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:28.312" endtime="20240619 21:02:28.377"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:28.312" endtime="20240619 21:02:28.377"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:29.377" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:28.377" endtime="20240619 21:02:29.377"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:29.538" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="LAXMIMACH_5D"&gt;&lt;img src="LAXMIMACH_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:29.377" endtime="20240619 21:02:29.538"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:24.971" endtime="20240619 21:02:29.538"/>
+</iter>
+<iter>
+<var name="${text}">('AAVAS',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:29.538" level="INFO">('AAVAS',)</msg>
+<status status="PASS" starttime="20240619 21:02:29.538" endtime="20240619 21:02:29.538"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:29.538" level="INFO">Opening url 'https://www.google.com/finance/quote/AAVAS:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:29.538" endtime="20240619 21:02:30.678"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:31.678" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:30.678" endtime="20240619 21:02:31.678"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:31.680" endtime="20240619 21:02:31.727"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:31.678" endtime="20240619 21:02:31.727"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:31.902" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AAVAS_1D"&gt;&lt;img src="AAVAS_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:31.727" endtime="20240619 21:02:31.902"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:31.902" level="INFO">Opening url 'https://www.google.com/finance/quote/AAVAS:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:31.902" endtime="20240619 21:02:32.970"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:32.970" endtime="20240619 21:02:33.035"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:32.970" endtime="20240619 21:02:33.035"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:34.036" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:33.035" endtime="20240619 21:02:34.036"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:34.218" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AAVAS_5D"&gt;&lt;img src="AAVAS_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:34.036" endtime="20240619 21:02:34.218"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:29.538" endtime="20240619 21:02:34.218"/>
+</iter>
+<iter>
+<var name="${text}">('RBLBANK',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:34.228" level="INFO">('RBLBANK',)</msg>
+<status status="PASS" starttime="20240619 21:02:34.218" endtime="20240619 21:02:34.228"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:34.229" level="INFO">Opening url 'https://www.google.com/finance/quote/RBLBANK:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:34.228" endtime="20240619 21:02:35.301"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:36.301" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:35.301" endtime="20240619 21:02:36.301"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:36.301" endtime="20240619 21:02:36.339"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:36.301" endtime="20240619 21:02:36.339"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:36.500" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="RBLBANK_1D"&gt;&lt;img src="RBLBANK_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:36.339" endtime="20240619 21:02:36.500"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:36.500" level="INFO">Opening url 'https://www.google.com/finance/quote/RBLBANK:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:36.500" endtime="20240619 21:02:37.683"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:37.683" endtime="20240619 21:02:37.730"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:37.683" endtime="20240619 21:02:37.730"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:38.732" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:37.730" endtime="20240619 21:02:38.732"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:38.900" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="RBLBANK_5D"&gt;&lt;img src="RBLBANK_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:38.732" endtime="20240619 21:02:38.900"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:34.218" endtime="20240619 21:02:38.900"/>
+</iter>
+<iter>
+<var name="${text}">('COROMANDEL',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:38.900" level="INFO">('COROMANDEL',)</msg>
+<status status="PASS" starttime="20240619 21:02:38.900" endtime="20240619 21:02:38.900"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:38.900" level="INFO">Opening url 'https://www.google.com/finance/quote/COROMANDEL:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:38.900" endtime="20240619 21:02:39.968"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:40.968" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:39.968" endtime="20240619 21:02:40.968"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:40.968" endtime="20240619 21:02:41.014"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:40.968" endtime="20240619 21:02:41.014"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:41.201" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="COROMANDEL_1D"&gt;&lt;img src="COROMANDEL_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:41.014" endtime="20240619 21:02:41.201"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:41.211" level="INFO">Opening url 'https://www.google.com/finance/quote/COROMANDEL:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:41.201" endtime="20240619 21:02:42.254"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:42.254" endtime="20240619 21:02:42.310"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:42.254" endtime="20240619 21:02:42.310"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:43.310" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:42.310" endtime="20240619 21:02:43.310"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:43.483" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="COROMANDEL_5D"&gt;&lt;img src="COROMANDEL_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:43.310" endtime="20240619 21:02:43.483"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:38.900" endtime="20240619 21:02:43.483"/>
+</iter>
+<iter>
+<var name="${text}">('DEEPAKNTR',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:43.483" level="INFO">('DEEPAKNTR',)</msg>
+<status status="PASS" starttime="20240619 21:02:43.483" endtime="20240619 21:02:43.483"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:43.483" level="INFO">Opening url 'https://www.google.com/finance/quote/DEEPAKNTR:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:43.483" endtime="20240619 21:02:44.627"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:45.627" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:44.627" endtime="20240619 21:02:45.627"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:45.627" endtime="20240619 21:02:45.669"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:45.627" endtime="20240619 21:02:45.669"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:45.832" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DEEPAKNTR_1D"&gt;&lt;img src="DEEPAKNTR_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:45.669" endtime="20240619 21:02:45.832"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:45.832" level="INFO">Opening url 'https://www.google.com/finance/quote/DEEPAKNTR:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:45.832" endtime="20240619 21:02:47.050"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:47.050" endtime="20240619 21:02:47.080"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:47.050" endtime="20240619 21:02:47.080"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:48.080" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:47.080" endtime="20240619 21:02:48.080"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:48.216" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DEEPAKNTR_5D"&gt;&lt;img src="DEEPAKNTR_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:48.080" endtime="20240619 21:02:48.216"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:43.483" endtime="20240619 21:02:48.216"/>
+</iter>
+<iter>
+<var name="${text}">('HOMEFIRST',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:48.216" level="INFO">('HOMEFIRST',)</msg>
+<status status="PASS" starttime="20240619 21:02:48.216" endtime="20240619 21:02:48.216"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:48.216" level="INFO">Opening url 'https://www.google.com/finance/quote/HOMEFIRST:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:48.216" endtime="20240619 21:02:49.378"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:50.378" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:49.378" endtime="20240619 21:02:50.378"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:50.378" endtime="20240619 21:02:50.425"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:50.378" endtime="20240619 21:02:50.425"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:50.613" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HOMEFIRST_1D"&gt;&lt;img src="HOMEFIRST_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:50.425" endtime="20240619 21:02:50.613"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:50.613" level="INFO">Opening url 'https://www.google.com/finance/quote/HOMEFIRST:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:50.613" endtime="20240619 21:02:51.834"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240619 21:02:51.912" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240619 21:02:51.834" endtime="20240619 21:02:52.151"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:51.834" endtime="20240619 21:02:52.155"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:53.155" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:52.155" endtime="20240619 21:02:53.155"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:53.329" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HOMEFIRST_5D"&gt;&lt;img src="HOMEFIRST_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:53.155" endtime="20240619 21:02:53.329"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:48.216" endtime="20240619 21:02:53.345"/>
+</iter>
+<iter>
+<var name="${text}">('NAVINFLUOR',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:53.345" level="INFO">('NAVINFLUOR',)</msg>
+<status status="PASS" starttime="20240619 21:02:53.345" endtime="20240619 21:02:53.345"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:53.345" level="INFO">Opening url 'https://www.google.com/finance/quote/NAVINFLUOR:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:53.345" endtime="20240619 21:02:54.588"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:55.588" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:54.588" endtime="20240619 21:02:55.588"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:02:55.588" endtime="20240619 21:02:55.627"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:55.588" endtime="20240619 21:02:55.627"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:55.806" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="NAVINFLUOR_1D"&gt;&lt;img src="NAVINFLUOR_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:55.627" endtime="20240619 21:02:55.806"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:55.806" level="INFO">Opening url 'https://www.google.com/finance/quote/NAVINFLUOR:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:02:55.806" endtime="20240619 21:02:56.913"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:02:56.913" endtime="20240619 21:02:56.981"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:56.913" endtime="20240619 21:02:56.981"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:02:57.982" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:56.981" endtime="20240619 21:02:57.982"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:02:58.162" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="NAVINFLUOR_5D"&gt;&lt;img src="NAVINFLUOR_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:02:57.982" endtime="20240619 21:02:58.162"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:53.345" endtime="20240619 21:02:58.162"/>
+</iter>
+<iter>
+<var name="${text}">('HDFCBANK',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:02:58.162" level="INFO">('HDFCBANK',)</msg>
+<status status="PASS" starttime="20240619 21:02:58.162" endtime="20240619 21:02:58.162"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:02:58.162" level="INFO">Opening url 'https://www.google.com/finance/quote/HDFCBANK:NSE'</msg>
+<status status="PASS" starttime="20240619 21:02:58.162" endtime="20240619 21:02:59.323"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:00.323" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:02:59.323" endtime="20240619 21:03:00.323"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:00.323" endtime="20240619 21:03:00.393"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:00.323" endtime="20240619 21:03:00.393"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:00.561" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HDFCBANK_1D"&gt;&lt;img src="HDFCBANK_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:00.393" endtime="20240619 21:03:00.561"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:00.561" level="INFO">Opening url 'https://www.google.com/finance/quote/HDFCBANK:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:00.561" endtime="20240619 21:03:01.594"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:01.594" endtime="20240619 21:03:01.634"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:01.594" endtime="20240619 21:03:01.634"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:02.634" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:01.634" endtime="20240619 21:03:02.634"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:02.811" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HDFCBANK_5D"&gt;&lt;img src="HDFCBANK_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:02.634" endtime="20240619 21:03:02.811"/>
+</kw>
+<status status="PASS" starttime="20240619 21:02:58.162" endtime="20240619 21:03:02.811"/>
+</iter>
+<iter>
+<var name="${text}">('HCLTECH',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:02.811" level="INFO">('HCLTECH',)</msg>
+<status status="PASS" starttime="20240619 21:03:02.811" endtime="20240619 21:03:02.811"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:02.811" level="INFO">Opening url 'https://www.google.com/finance/quote/HCLTECH:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:02.811" endtime="20240619 21:03:04.021"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:05.021" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:04.021" endtime="20240619 21:03:05.021"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:05.021" endtime="20240619 21:03:05.082"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:05.021" endtime="20240619 21:03:05.082"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:05.246" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HCLTECH_1D"&gt;&lt;img src="HCLTECH_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:05.082" endtime="20240619 21:03:05.246"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:05.246" level="INFO">Opening url 'https://www.google.com/finance/quote/HCLTECH:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:05.246" endtime="20240619 21:03:06.230"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:06.230" endtime="20240619 21:03:06.295"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:06.230" endtime="20240619 21:03:06.295"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:07.297" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:06.295" endtime="20240619 21:03:07.297"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:07.477" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HCLTECH_5D"&gt;&lt;img src="HCLTECH_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:07.297" endtime="20240619 21:03:07.477"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:02.811" endtime="20240619 21:03:07.477"/>
+</iter>
+<iter>
+<var name="${text}">('WIPRO',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:07.477" level="INFO">('WIPRO',)</msg>
+<status status="PASS" starttime="20240619 21:03:07.477" endtime="20240619 21:03:07.477"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:07.477" level="INFO">Opening url 'https://www.google.com/finance/quote/WIPRO:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:07.477" endtime="20240619 21:03:08.603"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:09.605" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:08.603" endtime="20240619 21:03:09.605"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:09.605" endtime="20240619 21:03:09.644"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:09.605" endtime="20240619 21:03:09.644"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:09.827" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="WIPRO_1D"&gt;&lt;img src="WIPRO_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:09.644" endtime="20240619 21:03:09.827"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:09.827" level="INFO">Opening url 'https://www.google.com/finance/quote/WIPRO:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:09.827" endtime="20240619 21:03:10.969"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:10.969" endtime="20240619 21:03:11.014"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:10.969" endtime="20240619 21:03:11.014"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:12.015" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:11.014" endtime="20240619 21:03:12.015"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:12.210" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="WIPRO_5D"&gt;&lt;img src="WIPRO_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:12.015" endtime="20240619 21:03:12.210"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:07.477" endtime="20240619 21:03:12.210"/>
+</iter>
+<iter>
+<var name="${text}">('PAGEIND',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:12.210" level="INFO">('PAGEIND',)</msg>
+<status status="PASS" starttime="20240619 21:03:12.210" endtime="20240619 21:03:12.210"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:12.210" level="INFO">Opening url 'https://www.google.com/finance/quote/PAGEIND:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:12.210" endtime="20240619 21:03:13.240"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:14.241" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:13.240" endtime="20240619 21:03:14.241"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:14.241" endtime="20240619 21:03:14.289"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:14.241" endtime="20240619 21:03:14.289"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:14.457" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PAGEIND_1D"&gt;&lt;img src="PAGEIND_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:14.289" endtime="20240619 21:03:14.457"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:14.457" level="INFO">Opening url 'https://www.google.com/finance/quote/PAGEIND:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:14.457" endtime="20240619 21:03:15.464"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240619 21:03:15.527" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<msg timestamp="20240619 21:03:15.792" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240619 21:03:15.467" endtime="20240619 21:03:16.056"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:15.464" endtime="20240619 21:03:16.056"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:17.056" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:16.056" endtime="20240619 21:03:17.056"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:17.235" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PAGEIND_5D"&gt;&lt;img src="PAGEIND_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:17.056" endtime="20240619 21:03:17.235"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:12.210" endtime="20240619 21:03:17.235"/>
+</iter>
+<iter>
+<var name="${text}">('INFY',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:17.235" level="INFO">('INFY',)</msg>
+<status status="PASS" starttime="20240619 21:03:17.235" endtime="20240619 21:03:17.235"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:17.235" level="INFO">Opening url 'https://www.google.com/finance/quote/INFY:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:17.235" endtime="20240619 21:03:18.311"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:19.311" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:18.311" endtime="20240619 21:03:19.311"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:19.311" endtime="20240619 21:03:19.379"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:19.311" endtime="20240619 21:03:19.379"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:19.541" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="INFY_1D"&gt;&lt;img src="INFY_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:19.379" endtime="20240619 21:03:19.541"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:19.541" level="INFO">Opening url 'https://www.google.com/finance/quote/INFY:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:19.541" endtime="20240619 21:03:20.605"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:20.605" endtime="20240619 21:03:20.649"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:20.605" endtime="20240619 21:03:20.649"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:21.649" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:20.649" endtime="20240619 21:03:21.649"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:21.806" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="INFY_5D"&gt;&lt;img src="INFY_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:21.649" endtime="20240619 21:03:21.806"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:17.235" endtime="20240619 21:03:21.806"/>
+</iter>
+<iter>
+<var name="${text}">('FACT',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:21.806" level="INFO">('FACT',)</msg>
+<status status="PASS" starttime="20240619 21:03:21.806" endtime="20240619 21:03:21.806"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:21.806" level="INFO">Opening url 'https://www.google.com/finance/quote/FACT:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:21.806" endtime="20240619 21:03:22.987"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:23.989" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:22.987" endtime="20240619 21:03:23.989"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:23.989" endtime="20240619 21:03:24.054"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:23.989" endtime="20240619 21:03:24.054"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:24.222" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="FACT_1D"&gt;&lt;img src="FACT_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:24.054" endtime="20240619 21:03:24.222"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:24.230" level="INFO">Opening url 'https://www.google.com/finance/quote/FACT:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:24.222" endtime="20240619 21:03:25.281"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240619 21:03:25.350" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240619 21:03:25.282" endtime="20240619 21:03:25.588"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:25.282" endtime="20240619 21:03:25.589"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:26.589" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:25.589" endtime="20240619 21:03:26.589"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:26.789" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="FACT_5D"&gt;&lt;img src="FACT_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:26.589" endtime="20240619 21:03:26.789"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:21.806" endtime="20240619 21:03:26.789"/>
+</iter>
+<iter>
+<var name="${text}">('ZENSARTECH',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:26.789" level="INFO">('ZENSARTECH',)</msg>
+<status status="PASS" starttime="20240619 21:03:26.789" endtime="20240619 21:03:26.789"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:26.789" level="INFO">Opening url 'https://www.google.com/finance/quote/ZENSARTECH:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:26.789" endtime="20240619 21:03:28.024"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:29.024" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:28.024" endtime="20240619 21:03:29.024"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:29.024" endtime="20240619 21:03:29.059"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:29.024" endtime="20240619 21:03:29.059"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:29.253" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ZENSARTECH_1D"&gt;&lt;img src="ZENSARTECH_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:29.059" endtime="20240619 21:03:29.253"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:29.253" level="INFO">Opening url 'https://www.google.com/finance/quote/ZENSARTECH:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:29.253" endtime="20240619 21:03:30.474"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:30.474" endtime="20240619 21:03:30.524"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:30.474" endtime="20240619 21:03:30.524"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:31.524" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:30.524" endtime="20240619 21:03:31.524"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:31.687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ZENSARTECH_5D"&gt;&lt;img src="ZENSARTECH_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:31.524" endtime="20240619 21:03:31.687"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:26.789" endtime="20240619 21:03:31.687"/>
+</iter>
+<iter>
+<var name="${text}">('INDUSTOWER',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:31.687" level="INFO">('INDUSTOWER',)</msg>
+<status status="PASS" starttime="20240619 21:03:31.687" endtime="20240619 21:03:31.687"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:31.687" level="INFO">Opening url 'https://www.google.com/finance/quote/INDUSTOWER:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:31.687" endtime="20240619 21:03:32.975"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:33.976" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:32.975" endtime="20240619 21:03:33.976"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:33.976" endtime="20240619 21:03:34.030"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:33.976" endtime="20240619 21:03:34.030"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:34.187" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="INDUSTOWER_1D"&gt;&lt;img src="INDUSTOWER_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:34.030" endtime="20240619 21:03:34.187"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:34.187" level="INFO">Opening url 'https://www.google.com/finance/quote/INDUSTOWER:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:34.187" endtime="20240619 21:03:35.313"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:35.313" endtime="20240619 21:03:35.376"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:35.313" endtime="20240619 21:03:35.376"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:36.376" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:35.376" endtime="20240619 21:03:36.376"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:36.553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="INDUSTOWER_5D"&gt;&lt;img src="INDUSTOWER_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:36.376" endtime="20240619 21:03:36.553"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:31.687" endtime="20240619 21:03:36.553"/>
+</iter>
+<iter>
+<var name="${text}">('DEEPAKFERT',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:36.553" level="INFO">('DEEPAKFERT',)</msg>
+<status status="PASS" starttime="20240619 21:03:36.553" endtime="20240619 21:03:36.553"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:36.553" level="INFO">Opening url 'https://www.google.com/finance/quote/DEEPAKFERT:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:36.553" endtime="20240619 21:03:37.702"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:38.703" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:37.703" endtime="20240619 21:03:38.703"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:38.705" endtime="20240619 21:03:38.737"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:38.705" endtime="20240619 21:03:38.737"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:38.928" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DEEPAKFERT_1D"&gt;&lt;img src="DEEPAKFERT_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:38.737" endtime="20240619 21:03:38.928"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:38.928" level="INFO">Opening url 'https://www.google.com/finance/quote/DEEPAKFERT:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:38.928" endtime="20240619 21:03:40.057"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:40.057" endtime="20240619 21:03:40.112"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:40.057" endtime="20240619 21:03:40.112"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:41.113" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:40.112" endtime="20240619 21:03:41.113"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:41.271" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DEEPAKFERT_5D"&gt;&lt;img src="DEEPAKFERT_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:41.113" endtime="20240619 21:03:41.271"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:36.553" endtime="20240619 21:03:41.271"/>
+</iter>
+<iter>
+<var name="${text}">('SBIN',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:41.271" level="INFO">('SBIN',)</msg>
+<status status="PASS" starttime="20240619 21:03:41.271" endtime="20240619 21:03:41.271"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:41.271" level="INFO">Opening url 'https://www.google.com/finance/quote/SBIN:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:41.271" endtime="20240619 21:03:42.381"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:43.381" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:42.381" endtime="20240619 21:03:43.381"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:43.381" endtime="20240619 21:03:43.450"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:43.381" endtime="20240619 21:03:43.450"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:43.585" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SBIN_1D"&gt;&lt;img src="SBIN_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:43.450" endtime="20240619 21:03:43.585"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:43.601" level="INFO">Opening url 'https://www.google.com/finance/quote/SBIN:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:43.585" endtime="20240619 21:03:44.883"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:44.888" endtime="20240619 21:03:44.935"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:44.883" endtime="20240619 21:03:44.935"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:45.936" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:44.935" endtime="20240619 21:03:45.936"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:46.085" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SBIN_5D"&gt;&lt;img src="SBIN_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:45.936" endtime="20240619 21:03:46.085"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:41.271" endtime="20240619 21:03:46.085"/>
+</iter>
+<iter>
+<var name="${text}">('OFSS',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:46.085" level="INFO">('OFSS',)</msg>
+<status status="PASS" starttime="20240619 21:03:46.085" endtime="20240619 21:03:46.085"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:46.085" level="INFO">Opening url 'https://www.google.com/finance/quote/OFSS:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:46.085" endtime="20240619 21:03:47.241"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:48.243" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:47.241" endtime="20240619 21:03:48.243"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:48.243" endtime="20240619 21:03:48.293"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:48.243" endtime="20240619 21:03:48.293"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:48.498" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="OFSS_1D"&gt;&lt;img src="OFSS_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:48.293" endtime="20240619 21:03:48.498"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:48.503" level="INFO">Opening url 'https://www.google.com/finance/quote/OFSS:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:48.498" endtime="20240619 21:03:49.641"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:49.643" endtime="20240619 21:03:49.683"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:49.641" endtime="20240619 21:03:49.683"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:50.684" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:49.683" endtime="20240619 21:03:50.684"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:50.866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="OFSS_5D"&gt;&lt;img src="OFSS_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:50.684" endtime="20240619 21:03:50.866"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:46.085" endtime="20240619 21:03:50.866"/>
+</iter>
+<iter>
+<var name="${text}">('CHAMBLFERT',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:50.866" level="INFO">('CHAMBLFERT',)</msg>
+<status status="PASS" starttime="20240619 21:03:50.866" endtime="20240619 21:03:50.866"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:50.882" level="INFO">Opening url 'https://www.google.com/finance/quote/CHAMBLFERT:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:50.882" endtime="20240619 21:03:52.171"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:53.172" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:52.171" endtime="20240619 21:03:53.172"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:53.172" endtime="20240619 21:03:53.217"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:53.172" endtime="20240619 21:03:53.217"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:53.361" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CHAMBLFERT_1D"&gt;&lt;img src="CHAMBLFERT_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:53.217" endtime="20240619 21:03:53.361"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:53.361" level="INFO">Opening url 'https://www.google.com/finance/quote/CHAMBLFERT:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:53.361" endtime="20240619 21:03:54.445"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:54.445" endtime="20240619 21:03:54.487"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:54.445" endtime="20240619 21:03:54.487"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:55.488" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:54.487" endtime="20240619 21:03:55.488"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:55.700" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CHAMBLFERT_5D"&gt;&lt;img src="CHAMBLFERT_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:55.488" endtime="20240619 21:03:55.700"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:50.866" endtime="20240619 21:03:55.700"/>
+</iter>
+<iter>
+<var name="${text}">('CLEAN',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:03:55.700" level="INFO">('CLEAN',)</msg>
+<status status="PASS" starttime="20240619 21:03:55.700" endtime="20240619 21:03:55.700"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:55.700" level="INFO">Opening url 'https://www.google.com/finance/quote/CLEAN:NSE'</msg>
+<status status="PASS" starttime="20240619 21:03:55.700" endtime="20240619 21:03:56.781"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:03:57.783" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:56.781" endtime="20240619 21:03:57.783"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:03:57.783" endtime="20240619 21:03:57.815"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:57.783" endtime="20240619 21:03:57.815"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:03:58.013" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CLEAN_1D"&gt;&lt;img src="CLEAN_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:03:57.831" endtime="20240619 21:03:58.013"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:03:58.013" level="INFO">Opening url 'https://www.google.com/finance/quote/CLEAN:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:03:58.013" endtime="20240619 21:03:58.996"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:03:58.996" endtime="20240619 21:03:59.057"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:58.996" endtime="20240619 21:03:59.057"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:00.061" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:03:59.057" endtime="20240619 21:04:00.061"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:00.210" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="CLEAN_5D"&gt;&lt;img src="CLEAN_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:00.061" endtime="20240619 21:04:00.210"/>
+</kw>
+<status status="PASS" starttime="20240619 21:03:55.700" endtime="20240619 21:04:00.210"/>
+</iter>
+<iter>
+<var name="${text}">('KARURVYSYA',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:04:00.210" level="INFO">('KARURVYSYA',)</msg>
+<status status="PASS" starttime="20240619 21:04:00.210" endtime="20240619 21:04:00.210"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:00.210" level="INFO">Opening url 'https://www.google.com/finance/quote/KARURVYSYA:NSE'</msg>
+<status status="PASS" starttime="20240619 21:04:00.210" endtime="20240619 21:04:01.226"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:02.226" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:01.226" endtime="20240619 21:04:02.226"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:04:02.226" endtime="20240619 21:04:02.275"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:02.226" endtime="20240619 21:04:02.275"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:02.430" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="KARURVYSYA_1D"&gt;&lt;img src="KARURVYSYA_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:02.275" endtime="20240619 21:04:02.430"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:02.430" level="INFO">Opening url 'https://www.google.com/finance/quote/KARURVYSYA:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:04:02.430" endtime="20240619 21:04:03.493"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240619 21:04:03.554" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<msg timestamp="20240619 21:04:03.847" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240619 21:04:03.493" endtime="20240619 21:04:04.134"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:03.493" endtime="20240619 21:04:04.134"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:05.134" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:04.134" endtime="20240619 21:04:05.134"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:05.296" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="KARURVYSYA_5D"&gt;&lt;img src="KARURVYSYA_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:05.134" endtime="20240619 21:04:05.296"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:00.210" endtime="20240619 21:04:05.296"/>
+</iter>
+<iter>
+<var name="${text}">('ISEC',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:04:05.296" level="INFO">('ISEC',)</msg>
+<status status="PASS" starttime="20240619 21:04:05.296" endtime="20240619 21:04:05.296"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:05.296" level="INFO">Opening url 'https://www.google.com/finance/quote/ISEC:NSE'</msg>
+<status status="PASS" starttime="20240619 21:04:05.296" endtime="20240619 21:04:06.393"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:07.394" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:06.393" endtime="20240619 21:04:07.394"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:04:07.394" endtime="20240619 21:04:07.442"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:07.394" endtime="20240619 21:04:07.442"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:07.597" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ISEC_1D"&gt;&lt;img src="ISEC_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:07.442" endtime="20240619 21:04:07.597"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:07.597" level="INFO">Opening url 'https://www.google.com/finance/quote/ISEC:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:04:07.597" endtime="20240619 21:04:08.556"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20240619 21:04:08.618" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20240619 21:04:08.556" endtime="20240619 21:04:08.878"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:08.556" endtime="20240619 21:04:08.878"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:09.879" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:08.878" endtime="20240619 21:04:09.879"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:10.077" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ISEC_5D"&gt;&lt;img src="ISEC_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:09.879" endtime="20240619 21:04:10.077"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:05.296" endtime="20240619 21:04:10.077"/>
+</iter>
+<iter>
+<var name="${text}">('ZOMATO',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:04:10.077" level="INFO">('ZOMATO',)</msg>
+<status status="PASS" starttime="20240619 21:04:10.077" endtime="20240619 21:04:10.077"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:10.077" level="INFO">Opening url 'https://www.google.com/finance/quote/ZOMATO:NSE'</msg>
+<status status="PASS" starttime="20240619 21:04:10.077" endtime="20240619 21:04:11.152"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:12.153" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:11.152" endtime="20240619 21:04:12.153"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:04:12.154" endtime="20240619 21:04:12.185"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:12.154" endtime="20240619 21:04:12.185"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:12.344" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ZOMATO_1D"&gt;&lt;img src="ZOMATO_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:12.185" endtime="20240619 21:04:12.344"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:12.344" level="INFO">Opening url 'https://www.google.com/finance/quote/ZOMATO:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:04:12.344" endtime="20240619 21:04:13.463"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:04:13.465" endtime="20240619 21:04:13.512"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:13.465" endtime="20240619 21:04:13.512"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:14.513" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:13.512" endtime="20240619 21:04:14.513"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:14.669" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ZOMATO_5D"&gt;&lt;img src="ZOMATO_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:14.513" endtime="20240619 21:04:14.669"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:10.077" endtime="20240619 21:04:14.669"/>
+</iter>
+<iter>
+<var name="${text}">('BANDHANBNK',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:04:14.669" level="INFO">('BANDHANBNK',)</msg>
+<status status="PASS" starttime="20240619 21:04:14.669" endtime="20240619 21:04:14.669"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:14.678" level="INFO">Opening url 'https://www.google.com/finance/quote/BANDHANBNK:NSE'</msg>
+<status status="PASS" starttime="20240619 21:04:14.669" endtime="20240619 21:04:15.871"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:16.872" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:15.871" endtime="20240619 21:04:16.872"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:04:16.872" endtime="20240619 21:04:16.919"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:16.872" endtime="20240619 21:04:16.919"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:17.109" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="BANDHANBNK_1D"&gt;&lt;img src="BANDHANBNK_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:16.919" endtime="20240619 21:04:17.109"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:17.109" level="INFO">Opening url 'https://www.google.com/finance/quote/BANDHANBNK:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:04:17.109" endtime="20240619 21:04:18.182"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:04:18.183" endtime="20240619 21:04:18.236"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:18.182" endtime="20240619 21:04:18.236"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:19.237" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:18.236" endtime="20240619 21:04:19.237"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:19.393" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="BANDHANBNK_5D"&gt;&lt;img src="BANDHANBNK_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:19.237" endtime="20240619 21:04:19.393"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:14.669" endtime="20240619 21:04:19.393"/>
+</iter>
+<iter>
+<var name="${text}">('BALRAMCHIN',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:04:19.393" level="INFO">('BALRAMCHIN',)</msg>
+<status status="PASS" starttime="20240619 21:04:19.393" endtime="20240619 21:04:19.393"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:19.393" level="INFO">Opening url 'https://www.google.com/finance/quote/BALRAMCHIN:NSE'</msg>
+<status status="PASS" starttime="20240619 21:04:19.393" endtime="20240619 21:04:20.471"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:21.471" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:20.471" endtime="20240619 21:04:21.471"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:04:21.471" endtime="20240619 21:04:21.507"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:21.471" endtime="20240619 21:04:21.507"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:21.693" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="BALRAMCHIN_1D"&gt;&lt;img src="BALRAMCHIN_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:21.507" endtime="20240619 21:04:21.693"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:21.693" level="INFO">Opening url 'https://www.google.com/finance/quote/BALRAMCHIN:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:04:21.693" endtime="20240619 21:04:22.894"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:04:22.894" endtime="20240619 21:04:22.920"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:22.894" endtime="20240619 21:04:22.920"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:23.920" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:22.920" endtime="20240619 21:04:23.920"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:24.102" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="BALRAMCHIN_5D"&gt;&lt;img src="BALRAMCHIN_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:23.920" endtime="20240619 21:04:24.102"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:19.393" endtime="20240619 21:04:24.102"/>
+</iter>
+<iter>
+<var name="${text}">('AIAENG',)</var>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240619 21:04:24.109" level="INFO">('AIAENG',)</msg>
+<status status="PASS" starttime="20240619 21:04:24.102" endtime="20240619 21:04:24.109"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:24.110" level="INFO">Opening url 'https://www.google.com/finance/quote/AIAENG:NSE'</msg>
+<status status="PASS" starttime="20240619 21:04:24.109" endtime="20240619 21:04:25.365"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:26.365" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:25.365" endtime="20240619 21:04:26.365"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Prev close</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240619 21:04:26.367" endtime="20240619 21:04:26.414"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:26.365" endtime="20240619 21:04:26.414"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:26.607" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AIAENG_1D"&gt;&lt;img src="AIAENG_1D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:26.414" endtime="20240619 21:04:26.607"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240619 21:04:26.619" level="INFO">Opening url 'https://www.google.com/finance/quote/AIAENG:NSE?window=5D'</msg>
+<status status="PASS" starttime="20240619 21:04:26.607" endtime="20240619 21:04:27.657"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240619 21:04:27.661" endtime="20240619 21:04:27.722"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:27.661" endtime="20240619 21:04:27.722"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240619 21:04:28.723" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240619 21:04:27.722" endtime="20240619 21:04:28.723"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240619 21:04:28.891" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AIAENG_5D"&gt;&lt;img src="AIAENG_5D" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240619 21:04:28.723" endtime="20240619 21:04:28.891"/>
+</kw>
+<status status="PASS" starttime="20240619 21:04:24.102" endtime="20240619 21:04:28.891"/>
+</iter>
+<status status="PASS" starttime="20240619 21:02:01.146" endtime="20240619 21:04:28.891"/>
+</for>
+<status status="PASS" starttime="20240619 21:02:01.058" endtime="20240619 21:04:28.891"/>
+</test>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240619 21:04:28.891" endtime="20240619 21:04:31.140"/>
+</kw>
+<status status="PASS" starttime="20240619 21:01:58.698" endtime="20240619 21:04:31.140"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Screen">Screen</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
