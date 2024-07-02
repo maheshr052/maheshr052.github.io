@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240702 22:29:26.425" rpa="false" schemaversion="4">
+<suite id="s1" name="Screen" source="D:\Automation\testangel-main\pysmartapi\screen.robot">
+<kw name="Open Browser Test" type="SETUP">
+<arg>${HOMEPAGE}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240702 22:29:26.718" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/finance/quote'.</msg>
+<status status="PASS" starttime="20240702 22:29:26.717" endtime="20240702 22:29:28.955"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240702 22:29:28.956" endtime="20240702 22:29:29.012"/>
+</kw>
+<status status="PASS" starttime="20240702 22:29:26.717" endtime="20240702 22:29:29.012"/>
+</kw>
+<test id="s1-t1" name="Stock Screens" line="18">
+<kw name="Log Variables" library="BuiltIn">
+<doc>Logs all variables in the current scope with given log level.</doc>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${/} = \</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${:} = ;</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${\n} = 
+</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${BROWSER} = chrome</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${DEBUG_FILE} = NONE</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${EXECDIR} = D:\Automation\testangel-main</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${False} = False</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${HOMEPAGE} = https://www.google.com/finance/quote</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${LOG_FILE} = D:\Automation\testangel-main\maheshr052.github.io\20240207\log.html</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${LOG_LEVEL} = INFO</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${None} = None</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${null} = None</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">&amp;{OPTIONS} = { include=[] | exclude=[] | skip=[] | skip_on_failure=[] }</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${OUTPUT_DIR} = D:\Automation\testangel-main\maheshr052.github.io\20240207</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${OUTPUT_FILE} = D:\Automation\testangel-main\maheshr052.github.io\20240207\output.xml</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${PREV_TEST_MESSAGE} = </msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${PREV_TEST_NAME} = </msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${PREV_TEST_STATUS} = </msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${REPORT_FILE} = D:\Automation\testangel-main\maheshr052.github.io\20240207\report.html</msg>
+<msg timestamp="20240702 22:29:29.017" level="INFO">${SPACE} =  </msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${SUITE_DOCUMENTATION} = </msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">&amp;{SUITE_METADATA} = { }</msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${SUITE_NAME} = Screen</msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${SUITE_SOURCE} = D:\Automation\testangel-main\pysmartapi\screen.robot</msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${TEMPDIR} = C:\Users\Dell\AppData\Local\Temp</msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${TEST_DOCUMENTATION} = </msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${TEST_NAME} = Stock Screens</msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">@{TEST_TAGS} = [ ]</msg>
+<msg timestamp="20240702 22:29:29.018" level="INFO">${True} = True</msg>
+<status status="PASS" starttime="20240702 22:29:29.015" endtime="20240702 22:29:29.018"/>
+</kw>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>psycopg2</arg>
+<arg>postgres</arg>
+<arg>postgres</arg>
+<arg>admin</arg>
+<arg>localhost</arg>
+<arg>5432</arg>
+<doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
+connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
+<msg timestamp="20240702 22:29:29.038" level="INFO">Connecting using : psycopg2.connect(database=postgres, user=postgres, password=***, host=localhost, port=5432)</msg>
+<status status="PASS" starttime="20240702 22:29:29.019" endtime="20240702 22:29:29.109"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>@{queryResults}</var>
+<arg>SELECT distinct * FROM chartink</arg>
+<doc>Runs a query with the ``selectStatement`` and returns the result as a list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<msg timestamp="20240702 22:29:29.110" level="INFO">Executing : Query  |  SELECT distinct * FROM chartink </msg>
+<msg timestamp="20240702 22:29:29.112" level="INFO">@{queryResults} = [ ]</msg>
+<status status="PASS" starttime="20240702 22:29:29.110" endtime="20240702 22:29:29.112"/>
+</kw>
+<for flavor="IN">
+<var>${text}</var>
+<value>@{queryResults}</value>
+<iter>
+<var name="${text}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.113" endtime="20240702 22:29:29.113"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.113" endtime="20240702 22:29:29.113"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.113" endtime="20240702 22:29:29.113"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>Prev close</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.113" endtime="20240702 22:29:29.114"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_1D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.114" endtime="20240702 22:29:29.114"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${HOMEPAGE}/${text}[0]:NSE?window=5D</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.114" endtime="20240702 22:29:29.114"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>wait until element is visible</arg>
+<arg>css:div&gt;svg&gt;g&gt;g&gt;rect</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.114" endtime="20240702 22:29:29.114"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.114" endtime="20240702 22:29:29.114"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>${text}[0]_5D</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240702 22:29:29.114" endtime="20240702 22:29:29.114"/>
+</kw>
+<status status="NOT RUN" starttime="20240702 22:29:29.113" endtime="20240702 22:29:29.114"/>
+</iter>
+<status status="NOT RUN" starttime="20240702 22:29:29.113" endtime="20240702 22:29:29.114"/>
+</for>
+<status status="PASS" starttime="20240702 22:29:29.012" endtime="20240702 22:29:29.115"/>
+</test>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240702 22:29:29.117" endtime="20240702 22:29:31.324"/>
+</kw>
+<status status="PASS" starttime="20240702 22:29:26.426" endtime="20240702 22:29:31.324"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Screen">Screen</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
